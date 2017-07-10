@@ -40,14 +40,16 @@ var ingreso = prompt("INGRESA UNA LETRA QUE CONSIDERE SEA LA PALABRA SECRETA :o 
         var caracter="";
         caracter += llamandoFunc[i];
         console.log(caracter +  "--> " + "esta en la posicion"+"-->"+i);
+      }else{
+      var noasert = alert ("no acertaste");
       }
 
 
   }
 
 }
- var l = ingresarCaracter(llamandoFunc);
-function dibujarHombre(){
+ ingresarCaracter(llamandoFunc);
+function dibujarHombre(dibujar){
 
 var hombre =  [        "________",
                        "   |\n",
@@ -64,4 +66,4 @@ var palabra =palabraRandom(palabras);
 console.log(palabra);
  // dibujarLinea(hombre);
 }
-dibujarHombre();
+dibujarHombre(dibujar);

@@ -1,3 +1,15 @@
+//_________ejercicio 1______________________________
+//Leer un número y escribir el valor absoluto del mismo.
+
+var s = "";
+var valor1  = Math.abs(45);
+var valor2 = Math.abs(-45);
+if (valor1 == valor2) {
+    document.write("son los mismos.");
+}
+else {
+document.write("son diferentes.");
+
 
 
 //______________ejercicio 2_______________________
@@ -40,12 +52,12 @@ console.log (num3);
 var suma = [25,40,10,20,15];
 
 function sumar(suma){
- var resul=[];
+  var resul=0;
 
 
- for(var  i = 0; i < suma.length;i++){
-   resul.puch(suma[i]);
-   }
-   return resul;
+  for(var  i = 0; i < suma.length;i++){
+    resul = resul + suma[i];
+    }
+    return resul;
 }
-console.log(suma);
+console.log (sumar(suma));
