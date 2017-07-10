@@ -1,31 +1,53 @@
-function imprimirHTML (M) {
-  var n = M.length;
-  for (var i = 0; i < n; i++) {
-        console.log(M[i]) ;
-  }
-}
 
 
-function imprimirMatriz (M) {
-  var n = M.length;
-  for (var i = 0; i < n; i++) {
-        console.log(M[i]) ;
-  }
-}
-
-
-function obtienerPalabraSecreta() {
-  var libreriaPalabras = ["m u l t i m e d i a", "i n t e r n a u t a", "s e r v i d o r", "p r o t o c o l o", "c o r t a f u e g o s",
+var palabras = ["m u l t i m e d i a", "i n t e r n a u t a", "s e r v i d o r", "p r o t o c o l o", "c o r t a f u e g o s",
   "n a v e g a d o r", "n o d o", "m a r c o", "p a g i n a", "t e l a r a ñ a",
   "d e s c a r g a r", "v i r t u a l", "m e m o r i a", "d i s c o", "l o c a l",
   "c o n e c t a r", "d e s c o n e c t a r", "e n c a m i n a d o r", "i n t e r n e t", "d o m i n i o",
   "d i n a m i c o", "h i p e r v i n c u l o", "e n l a c e", "m a r c a d o r", "o r d e n a d o r", "l a p i z", "o f i m a t i c a", "i n f o r m e" ];
+function palabraRandom(palabras){
 
-   var indice = Math.round ( Math.random() * 27 )
-   var cadena = new String( libreriaPalabras[indice] )
-   var palabra = cadena.split(" ")
-  return palabra;
+
+ var palabra = palabras[Math.floor(Math.random() * palabras.length)];
+ var newPalabra = palabra.split(" ");
+  console.log(newPalabra);
+
+   return newPalabra;
 }
+
+var llamandoF1 = palabraRandom(palabras);
+//funcion dibujarAsterik: imprime asteriscos de acuerdo a cuantos elementos contenga la palabra secreta.
+
+function dibujarLinea(llamandoF1){
+  var a= "";
+  for(var i=0; i<llamandoF1.length; i++){
+    a += (" _ ");
+  }
+  console.log(a);
+
+}
+
+
+var llamandoFunc=dibujarLinea(llamandoF1);
+
+// funcion ingresarCaracter :ingresando caracter para asertar  cada palabra secreta
+function ingresarCaracter(llamandoFunc){
+
+var ingreso = prompt("INGRESA UNA LETRA QUE CONSIDERE SEA LA PALABRA SECRETA :o    ");
+  for (var i = 0 ; i < llamandoFunc.length;i++){
+
+      if(ingreso == llamandoFunc[i]){
+        var caracter="";
+        caracter += llamandoFunc[i];
+        console.log(caracter +  "--> " + "esta en la posicion"+"-->"+i);
+      }
+
+
+  }
+
+}
+ var l = ingresarCaracter(llamandoFunc);
+function dibujarHombre(){
 
 var hombre =  [        "________",
                        "   |\n",
@@ -38,39 +60,8 @@ var hombre =  [        "________",
                        "         ",
                        "________"];
 
-var palabra = obtienerPalabraSecreta ();
+var palabra =palabraRandom(palabras);
 console.log(palabra);
-imprimirMatriz(hombre);
-
-
-
-function palabraSecreta(){
-  var asteris = "";
-  var i = 0 ;
-  while(i < palabra[i].length)
-    ;i++
-    {
-       asteris=asteris + "*";
-    }
-
-  }
-
-
-
-var a = [];
- var a = prompt("escriba la palabra secreta :) ");
-
-
-  function intentos(ind,a){
-      var i = 0;
-      var palabraAcertada= [];
-
-   while(i<10){
-
-       if(a == palabra.length){
-
-       }
-      i++;
-   }
-   console.log (a);
-   }
+ // dibujarLinea(hombre);
+}
+dibujarHombre();
